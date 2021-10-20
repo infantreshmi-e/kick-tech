@@ -1,0 +1,112 @@
+Reserved Word:
+To represents some meaning or functionality 
+
+reserved words(53)
+	1.keyword(50) - reserved word associate with functionality
+	2.Reserved Literals(3) -  reserved word associate with value
+	
+Reserved Literals(3) - true,false,null
+Keywords - (50)
+	1.used keywords(48)
+	2.unused keywords(2) - goto,const
+	
+USED KEYWORDS(48)
+
+	DATA TYPE(8)
+	byte
+	short
+	int
+	long
+	float
+	double
+	boolean
+	char
+	
+	FLOW CONTROL(11)
+	if
+	else
+	switch
+	case
+	default
+	while
+	do
+	for
+	break
+	continue
+	return
+	
+	MODIFIERS(11)
+	public
+	private
+	protected
+	static
+	final
+	abstract
+	synchronized
+	native
+	strictfp(1.2v)
+	transient
+	volatile
+	
+	EXCEPTION HANDLING(6)
+	try
+	catch
+	finally
+	throw
+	throws
+	assert(1.4v)
+	
+	
+	CLASS RELATED(6)
+	class
+	interface
+	extends
+	implements
+	package
+	import
+	
+	OBJECT RELATED(4)
+	new
+	instanceof
+	super
+	this
+	
+	EMPTY TYPE()
+	void (if the method return none)
+	*(default return type-int)
+	
+	UNUSED KEYWORDS(2)
+	goto
+	const(final already there to define constant)
+	*(if use this 2 keywords,compile time error will be thrown)
+	
+	RESERVED LITERALS(3)
+	true	........value of boolean type
+	false ..........value of boolean type
+	null ...........default value of object reference
+	
+	ENUM RELATED(1)
+	enum(1.5v)
+	to define group of named constants
+	*(refer month.java)
+	
+COMMON CONCLUSIONS:
+1.all 53 reserved words in java contains only lower case alphabets symbols
+2.In java we have only new keyword.no delete keyword in java.because destruction of useless
+objects is the responsibility of garbage collector
+3.follwoing are new keywords in java:
+	strictfp - 1.2V
+	assert - 1.4V
+	enum-1.5V
+4.Following corrections:
+	strictfp but not strictFp
+	instanceof but not instanceOf
+	synchronized but not synchronize
+	extends butnot extend
+	implements but not implement
+	import butnot imports
+	const but not constant
+
+
+	
+	
