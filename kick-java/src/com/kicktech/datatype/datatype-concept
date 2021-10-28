@@ -1,0 +1,143 @@
+DATA TYPES:
+each type strictly defined -Strongly types
+every variables and expressions have some type
+every assignment Should be compile for type compatability
+
+CONCLUSION:
+java is strongly typed program
+
+Java is Pure OOP?
+
+YES:
+when comparing with old language - Java has more OOP features.So YES.
+
+NO:
+several oop featured(multiple inheritance,Operator Overloading,etc..) not supported.
+Primitive data types there.So NO.
+
+
+PRIMITIVE DATA TYPES:(8)
+
+	a)NUMERIC DATA TYPES(Represents number)
+		I.Integral Data types(without decimal)
+			1.byte
+			2.short
+			3.int
+			4.long		
+		II.Floating point Data types(with decimal)
+			5.float
+			6.double
+	b)NON-NUMERIC DATA TYPES(Represents Character)
+			7.char
+			8.boolean
+
+			
+CONCLUSION:
+1.except boolean and char,remaining data types are considered as signed data types.
+because we can represent both positive and negative numbers.
+
+For Integral Values:
+BYTE:
+ size : 1 byte - 8 bits
+ 
+ |		|		|		|		|		|		|		|
+ MSB	2pow6	2pow5	2pow4	2pow3	2pow2	2pow1	2pow0
+ 		64	+	32	+	16	+	8	+	4	+	2	+	1 = 127
+ 
+ MSB-signed bit
+ 0 - Positive
+ 1 - Negative
+ 
+ max_value :+127
+ min_value :-128
+ positive numbers will be represented directly in a memory.
+ Negative numbers will be represented in 2s complement enough to represent 128.
+ range :-128 to 127
+
+ Handle the data in the form of Stream - Byte Type supported
+ File Supported to byte type
+ 2 Types of Stream:
+ 1.Character Stream
+ 2.Byte Stream
+ 
+ SHORT:
+ 
+ 1.rarely used data type
+ 
+ Size: 2 bytes(16 bits)
+ Range:  -2pow15  to 2pow15-1(-32768 to 32767)
+ 
+ 1.8085 processor - 16 bit processor - data represented in 16 bit
+ 2.short processor supported 16 bit(read and write efficient)
+ 3.8085 processor is out dated (ie. short  data type is almost out dated)
+ 
+ 
+ INT:
+ most used data type in java
+ Size= 4 bytes(32 bits)
+ Range: -2pow31 to 2pow31-2(-2147483648 to  2147483647)
+ Compiler default consider data type integer.
+ 
+ LONG:
+ length() method in file class - return type is long only(length may exceed in File)
+ Size: 8 bytes(64 bits)
+ Range: -2pow63 to 2pow63-1
+ 
+ 
+ Byte,short,long,int - used to represent Integral Values not for floating point values.
+ 
+ For Floating point values:
+ 
+ float and double
+ 
+ 10.0/3 = 3.333333..
+ if 5 to 6 decimal digit for less accuracy - float- single precision(less accuracy)
+ if 14 to 15 decimal digit for high accuracy - double -double precision(more accuracy)
+ 
+ FLOAT:
+ if 5 to 6 decimal digit for less accuracy - float- single precision(less accuracy)
+ Size: 4 bytes
+ Range: -3.4e38 to 3.4e38(3.4*10pow38)
+ 
+ DOUBLE:
+ if 14 to 15 decimal digit for high accuracy - double -double precision(more accuracy)
+ Size: 8 bytes
+ Range: -1.7e308 to 1.7e38(1.7*10pow308) 
+ 
+ ...
+ BOOLEAN:
+ Size: In java Size of boolean not applicable
+ Virtual machine dependent(may be 1 byte or not based on VM)
+ Range: No range applicable
+ Allowed Values: true or false
+ 
+ 
+ CHAR:
+  Size:2 bytes
+  Reason:
+  C,C++-ASCII code -size<=256(8 bits enough) - 1 byte
+  but java  unicode based(ASCII+world wide characters(eg.Tamil,Telugu,Japanese) Size<=65536
+  Range:0 to 65536
+  
+  Data Type----------Size------Range------------------------------------------Wrapper Class-Default Value
+  byte				1 byte		-2pow7to2pow7-1(-128 to 127)					Byte		0
+  short				2 byte		-2pow15to2pow15-1(-32768 to 32767)				Short		0
+  int				4 byte		-2pow31to2pow31-1(-2147683648 to 2147683647)	Integer		0
+  long				8 byte		-2pow63to2pow63-1								Long		0
+  float				4 byte		-3.4e38to3.4e38									Float		0.0
+  double			8 byte		-1.7e308to1.7e308								Double		0.0
+  boolean			NA			NA												Boolean		false
+  char				2 byte		0to65535										Character	0(represents space)
+  
+   
+ *null is default value for object reference only.we can't apply for primitives.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
