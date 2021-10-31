@@ -1,0 +1,120 @@
+Any constant value which can be assigned to the variable is called literal
+(refer LiteralSample.class:7)
+
+INTEGRAL LITERALS:
+
+Integral Types:
+byte
+short
+int
+long
+
+Ways to specify the Integral Literal Values:
+1.decimal form - base10(0-9)
+2.octal form  - (0-7)default JVM treat decimal form but number prefix with 0 is octal form
+3.Hexadecimal form -base 16(number prefix with 0X(lower and upper case applicable))(0-9 and a-f(lower and upper case applicable)
+
+INT AND LONG LITERALS SPECIFY:
+*every integral value by default int type
+How to specify to long -->suffix with l(not case sensitive l or L)
+long - 8 bytes
+int=-4bytes
+
+assign long literal  to int variable (compile error)
+assign int to long variable(can be cast)
+
+SHORT  AND BYTE LITERALS SPECIFY:
+There is no direct way to specify byte and short literals explicitly.
+but indirectly we can specify.
+whenever assign the integral literal to byte variable and if the value with in the range of byte,
+compiler automatically treats it as byte literal.(same for short literal also)
+
+
+FLOATING POINT LITERALS:
+
+Floating types:
+float
+double
+
+By default compiler will consider double type for floating point values.
+we can specify floating point literal as double type by suffix with d or D.
+But this conversion is not required.
+we can specify floating point literals only in decimal form.we can't
+specify in octal and hexa decimal forms.
+we can assign integral literal directly to floating point variable.That integral literal can be specified 
+either in decimal,octal or hexa decimal forms
+we can't assign floating point literals to integral types.
+we can specify floating point literal even in exponential form.
+
+BOOLEAN LITERALS:
+
+only allowed values for boolean data type are true or false.
+
+CHAR LITERALS:
+1.we can specify char literal as single character with single quotes
+2.For every character corresponding unicode characters there.
+we can specify the char literal by integral values(either in octal,decimal or hexa decimal values)
+(unicode values 0 to 65535)
+www.unicode.org -> listed all unicode
+3.we can specify char literal y unicode representation
+char literals in unicode representation :
+single quote backslash 4digit hexa decimal number '\uxxxx'
+4.Every escape characters are valid char literal
+
+Escape Characters in Java:(8)
+Escape character---------------description
+\n								new Line
+\t								Horizontal tab
+\r								carriage return
+\b								backspace(<------)
+\f								form feed
+\'								single quote
+\''								double quote
+\\								backslash
+
+To treat as a symbol we need escape characters
+carriage return - nextline first character
+
+STRING LITERALS:
+not a primitive type
+1.any sequence of characters within double quotes is treated as String literal .
+
+2Enhancements introduced in 1.7 related with literals:
+
+1)binary literals
+2)usage of _ symbol in numeric literals
+
+
+1)Binary Literals:(only for integral type)
+For integrals data type(byte,short,int,long) 3 ways to represents the literals(until 1.6):(decimal,octal,hexa decimal)
+1.7 onwards integrals can be represents as binary literal format also.
+allowed digits are  0 and 1
+literal value should be prefixed with 0b,0B
+
+2)From 1.7 V onwards we can us _ symbol between digits of a numeric literals
+The main advantage of this approach is readability of the code will be improved.
+readability required in java file only not in class file.
+at the time of compilation JVM will remove the _ symbol.
+we can use more than 1 _ symbol also between the digits.
+we can use _ symbol only between the digits.If using anywhere else will get compile error.
+
+Conversion of literals:
+byte ---> short--
+1b			2b	|
+		----------->int --->long ---> |float----->double
+		|			4b		8b		  |	4b			8b
+char--								  |
+2b			integral type					floating point type	  |
+
+
+small no of byte to long number of byte acceptable.But8byte long to 4b float how?
+
+integral memory representation completely differ from floating point type memory representation.
+So we can assign long to float 
+
+short is 2 byte and char also 2 byte.But char value cant assign to sort vice versa why?
+
+short is signed data type
+char is not signed data type
+
+char can't be assigned to -3567899;because char not accept the negative value.
