@@ -1,0 +1,294 @@
+	Index
+Array Introduction
+Array Declaration
+Array Creation
+Array Initialization
+Array declaration,creation,initialization in single line
+length vs length()
+Anonymous array
+Array element assignments
+Array variable assignments
+
+Introduction:
+
+x=	|	|	|	|	|	|	|	|	|	|	|........|	|	|
+	 0	  1   2   3			index
+	 
+	 
+1.An Array is an indexed collection of fixed number of homogeneous data elements.
+2.The main advantage of Array is we can represent huge number of values by using single variable
+So that readability of  the code will be improved.
+3.But the main disadvantage of the array is fixed in size
+That is once we creates an array there is no chance of increasing or decreasing the size based on our requirement
+hence to use array concept compulsory we should know the size in advance,which may not possible always
+
+Array Declaration:
+ 	i)one Dimensional (1D) array declaration:
+ 		valid declarations:
+ 		int[] x;--------->Recommended(variable name separated from the data type)
+ 		int []x;
+ 		int x[];
+ 		
+ 		At the time of declaration we can't specify the size.otherwise we will get compile time error.
+ 	ii)Two Dimensional (2D) array declaration:
+ 		valid declarations:
+ 		int[][] x;
+ 		int  [][]x;
+ 		int x[][];
+ 		int[] []x;
+ 		int[] x[];
+ 		int []x[];
+ 		If you want to specify the dimension before the variable,that facility is applicable only for 
+ 		first variable in a declaration.if trying to apply for remaining variables  we  will get compile time error.
+ 		
+ 	iii)Three Dimensional (3D) array declaration:
+ 		valid declarations:
+ 		int[][][] a;
+ 		int [][][]a;
+ 		int a[][][];
+ 		int[] [][]a;
+ 		int [] a[][];
+ 		int [] []a[];
+ 		int[][] []a;
+ 		int[][] a[];
+ 		int [][]a[];
+ 		int []a[][];
+ 		
+ Array Creation:
+ 	int[] a=new int[3];
+ 	1.object is created by new keyword.same array is created in java.So every array in java is an object.
+ 	2.object is created for class only.if array is an object means its belongs to class only.
+ 	eg.int array belongs to int array class.these classes are in language level.not programmer level
+ 	array class name for  1D=[I
+ 	array class name for 2D=[[I
+ 	
+ 	for every array type corresponding classes are avaialble.these classes are part of java language.not available to the programmer level
+ 	
+ 	ArrayType------------corresponding class name
+ 	int[]					[I
+ 	int[][]					[II
+ 	double[]				[D
+ 	short[]					[S
+ 	byte[]					[B
+ 	boolean[]				[Z
+ 	
+ Rules:
+ 1)At the  time of Array creation,Compulsory we should specify the size.otherwise we will get compile time error.
+ (see ArrayCreationSample.java:13-16)
+ 2)It is legal to have an array with size 0 in java
+ (see ArrayCreationSample.java:18)
+ 3)If trying to specify the array size with negative int value then,we will get run time exception that Negative array size exception.
+ (see ArrayCreationSample.java:20)
+ 4)to specify array size allowed data types are char ,byte,short,int
+ (see ArrayCreationSample.java:202-28)
+ 5)The maximum allowed array size in java is 2147483647(max value of int data type)
+  may be in this case we get out of memory issue(if sufficient memeory not available)
+  the memory for 2147483647 is 2147483647(no of int values)*4 bytes(int size)=the memory may not be available in our system
+  
+ 2D Array Creation: 
+ 2D array is a martix(group of rows and column)
+ 
+ Matrix:
+ 
+ 4 students there.
+ student 1 having 5 scores
+ student 2 having 2 scores
+ student 3 having 1 score
+ student 4 having 3 scores
+ 
+ 	s1|__56__|_55__|_78__|_90__|_90__|	
+ 	s2|__67__|_60__|_memory waste__|_memory waste__|_memory waste__|
+ 	s3|__22__|__memory waste__|___memory waste_|__memory waste__|__memory waste__|
+ 	s4|___45_|_50__|_32__|__memory waste__|__memory waste__|
+ 	
+ 	With Matrix array may be the memory can be wasted.So SUn java introduced Arrays of Array concept
+ Arrays of array:
+ 
+ base Array Size 4(no of studentss1,s2,s3,s4)
+ 
+ 		|S1|S2|S3|S4|
+ 
+ supplementary array
+ s1-->|__56_|_55__|__78_|_90__|_90__|
+ s2-->|_67__|_60__|
+ s3-->|_22__|
+ s4-->|_45__|_50__|__32_|
+ 
+ No memory waste if using array of array
+ 
+ 
+ In java 2D array not implemented by using matrix representation.Sun people followed array of arrays approach for multi dimensional array 
+ creation.The main advantage of this approach is memory utilization will be improved.
+ 
+eg1:
+Memory structure
+base array 2
+1st base having 2 supplement array
+2nd base having 3 supplement array 	
+(See ArrayofArray.java 7-9)
+base size we have to specify at the time of creation.
+
+eg2:Array of array of Array
+base size2
+array of array:
+1st array having size3
+2nd array having size2
+
+array of array of array:
+1st of 1 st having 1
+2nd of 1st  having size 2
+3rd of 1st having size 3
+
+2nd of 1st,2nd   having size 2
+(see ArrayofArray.java 11-16) 
+
+Array Initialization:
+
+Once we create an array,every element by default initialized with default values.(int- 0)
+whenever we are trying to print any reference variable,internally toString() method will be called.
+which is implemented by default to return the string in the following form.className@HashCode in hexadecimal form.
+
+if we are trying to perform any operation on null,then will get run time exception saying null pointer exception.
+
+Once we create the array,every array element by default initialized with default values.
+if we are not satisfied with default values,then we can override these values with our customized values
+
+If we are trying to access array element with out of range index(wither positive or negative int value).Then will get run time exception saying,array index out of bounds exception
+
+
+Array declaration,creation,initialization in single line:
+
+1.We can declare,create and initialze the array in a single line.(short cut representation)
+every java object created in heap memory only. 
+2.we can use this shortcut for multi dimensional arrays also
+___________________
+|		|		|           see ArrayInitinSingleLineSample.java 12
+|_______|_______|
+___|______	____|___________
+|_10_|_20_| |30_|40__|_50__|
+
+
+_________________
+|		|		|           
+|_______|_______|
+___|______	____|____
+|__|__| |_|__|-----------------.......
+   |      |   |___________.....			   |
+____|____  --____________	__|_____ ______|____
+|__|__|__|   |___|___|___|  |___|__| |__|___|__|
+10  20 30      40  50  60     70  80   90 100 110
+
+
+If you want to use this shortcut compulsory we should perform all activities in a single line.
+If we are trying to divide into multiple lines,we will get compile time error.(see ArrayInitinSingleLineSample.java 20-26)
+
+
+Length VS length():
+
+length variable:
+length is a final variable applicable for arrays.
+length variable represents size of the array
+length() method:
+Every method presents inside the final class always be a final method.we can't override the final class.String is final class so length() method inside the String class also final method
+Length() method is a final method applicable for string objects.
+length() method returns no of characters present in the String
+
+
+
+length variable applicable for arrays but not for String objects where as length() method
+applicable for String objects but not for arrays.
+
+In multi dimensional arrays length variable represents only base size.but not total size
+there is no direct way to find the total size(because  next level is not fixed)
+indirect way to find the total size of an array-> see LengthDifferSample.java 27
+
+Anonymous Array:
+
+nameless array.An array without name is called anonymous array.
+purpose:
+instant use or one time use
+
+sometimes we can declare an array without name such type of nameless arrays are called 
+anonymous arrays.
+The main purpose of anonymous array is just for instant use
+
+
+we can create anonymous array as follows:
+new int[]{10,20,30};--->valid
+
+while creating anonymous arrays we cant specify the size.otherwise we will get compile time error
+new int[3]{10,20,30};--->invalid
+
+we can create multi dimensional anonymous array also
+new int[][] {{10,20},{30,40}}---->valid
+
+based on our requirement we can give the name for anonymous array then,
+it is no longer anonymous.(see AnonymousArraySample.java 13)
+
+see AnonymousArraySample.java 08
+in the above example just to call sum method  we required an array.But after completing the summethod call,we are not using that array anymore.Hence for these 1 time requirement anonymous array is best choice
+
+Array element assignments:
+case1:
+In the case of primitive type array as array elements we can provide any type which can be implicity promoted to declared type.
+if it is int array -> char,byte,short and int is allowed
+if it is float array-> char,byte,short, int ,long,float allowed
+
+case2:
+In the case of object type arrays as array element we can provide either declared type
+object or its child class object
+
+case3:
+for interface type arrays as array element its implementation class objects are allowed.
+Runnable interface--> implementation class(thread class)
+See ArrayElementAssignSample.java 31
+
+
+Array type-------------------------------allowed element types
+primitive arrays						any type which can be implicitly promoted to declared type
+object type arrays						either declared type or its child class objects are allowed
+abstract class type arrays				its child classes are allowed
+(number array)	
+interface array type					its implementation class objects are allowed	
+
+
+Array Variable Assignments:
+
+case1:
+element level promotions are not applicable at array level.
+char element to int element--->acceptable
+char array to int array--->not acceptable		
+see ArrayVariableAssignmentSample.java 5-8
+
+
+char ----> int  valid
+char[]---->int[] invalid
+int--->double valid
+int[]---->double[] invalid
+float---->int invalid
+float[]--->int[] invalid
+String--->Object valid
+String[]--->object[] valid(child class type array can be promoted to parent type array)
+
+
+but in the case of object type arrays,child class type array can be promoted to
+parent class type array.see ArrayVariableAssignmentSample.java 10
+Integer type array to number array
+double type(child) array to NUmber Array(parent)
+
+case2:
+whenever we are assigning one array to another array internal elements wont be copied.
+just reference variable will be reassigned.
+see ArrayVariableAssignmentSample.java 14
+
+case3:
+whenever we are assigning one array to another array ,dimensions must be matched.
+see ArrayVariableAssignmentSample.java 14
+in the place of 1D int array ,we should provide 1D array only.
+If we are trying to provide,any other dimension,then we will get compile time error
+
+**whenever we are assigning one array to another array,both dimension and type should be matched.
+but sizes are not required to match.**
+
+
+
